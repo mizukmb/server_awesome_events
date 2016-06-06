@@ -21,6 +21,7 @@ Vagrant.configure(2) do |config|
     # chef.add_recipe 'rbenv::system'
     chef.add_recipe 'nginx'
     chef.add_recipe 'rails_book_cookbook::ops_user'
+    chef.add_recipe 'rails_book_cookbook::keys'
     #   chef.json = {
     #     # "ohai" => {
     #     #   "plugin_path" => 'ubuntu'
@@ -57,7 +58,7 @@ Vagrant.configure(2) do |config|
 
   # Create a private network, which allows host-only access to the machine
   # using a specific IP.
-  # config.vm.network "private_network", ip: "192.168.33.10"
+  config.vm.network "private_network", ip: "192.168.33.10"
   config.ssh.forward_agent = true
 
   # Create a public network, which generally matched to bridged network.
