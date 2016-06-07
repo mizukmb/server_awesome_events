@@ -1,4 +1,4 @@
 cookbooks/
 vendor/
 /rails_book_cookbook/
-/site-cookbooks/*
+/site-cookbooks/*/files
