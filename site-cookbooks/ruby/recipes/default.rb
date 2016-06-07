@@ -55,3 +55,7 @@ bash "install ruby" do
     /home/ops/.rbenv/bin/rbenv global 
   EOS
 end
+
+gem_package "bundler" do
+  gem_binary "/home/ops/.rbenv/shims/gem"
+end
