@@ -34,6 +34,7 @@ git "/home/ops/.rbenv/plugins/ruby-build" do
 end
 
 bash "insert_line_rbenvpath" do
+  not_if 'grep ".rbenv" /home/ops/.bashrc'
   environment "HOME" => '/home/ops'
   code <<-EOS
     echo 'export PATH="/home/ops/.rbenv/bin:$PATH"' >> ~/.bashrc
@@ -43,8 +44,8 @@ bash "insert_line_rbenvpath" do
   EOS
 end
 
-
 bash "install ruby" do
+  not_if "ls /home/ops/.rbenv/versions/2.3.1"
   user "ops"
   group "ops"
   environment "HOME" => '/home/ops'
