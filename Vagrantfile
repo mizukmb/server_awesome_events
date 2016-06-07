@@ -10,32 +10,16 @@ Vagrant.configure(2) do |config|
   config.vm.provision :chef_solo do |chef|
     chef.cookbooks_path = ["./cookbooks", "./site-cookbooks"]
 
-    chef.add_recipe 'ohai'
     chef.add_recipe 'build-essential'
     chef.add_recipe 'git'
     chef.add_recipe 'memcached'
     chef.add_recipe 'nodejs'
     chef.add_recipe 'database::sqlite'
     chef.add_recipe 'xml'
-    # chef.add_recipe 'ruby_build'
-    # chef.add_recipe 'rbenv::system'
     chef.add_recipe 'nginx'
     chef.add_recipe 'rails_book_cookbook::ops_user'
     chef.add_recipe 'rails_book_cookbook::keys'
-    #   chef.json = {
-    #     # "ohai" => {
-    #     #   "plugin_path" => 'ubuntu'
-    #     # }
-    #     "rbenv" => {
-    #       "global" => "2.1.2",
-    #       "rubies" => [ "2.1.2" ],
-    #       "gems" => {
-    #         "2.1.2" => [
-    #           { "name" => 'bundler' }
-    #         ]
-    #       }
-    #     }
-    #   }
+    chef.add_recipe 'ruby::default'
   end
 
   # The most common configuration options are documented and commented below.
