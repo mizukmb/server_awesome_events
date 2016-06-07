@@ -5,6 +5,7 @@ DEPENDENCIES
   memcached
   nginx
   nodejs
+  simple_iptables
   xml
 
 GRAPH
@@ -63,6 +64,7 @@ GRAPH
     packagecloud (>= 0.0.0)
   seven_zip (2.0.1)
     windows (>= 1.2.2)
+  simple_iptables (0.7.4)
   windows (1.43.0)
     chef_handler (>= 0.0.0)
   xml (2.0.0)
