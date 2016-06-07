@@ -1,3 +1,4 @@
 cookbooks/
 vendor/
-rails_book_cookbook/
+/rails_book_cookbook/
+/site-cookbooks/*
