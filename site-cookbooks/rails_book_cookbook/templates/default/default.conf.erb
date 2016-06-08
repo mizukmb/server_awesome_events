@@ -1,6 +1,6 @@
 server {
   listen 80;
-  sever_name <%= node.rails_book_cookbook.server_name %>;
+  server_name <%= node.rails_book_cookbook.server_name %>;
   access_log /var/log/nginx/<%= node.rails_book_cookbook.server_name %>.access_log;
 
   root /var/www/awesome-events/current/public;
