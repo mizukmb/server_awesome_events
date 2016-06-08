@@ -3,7 +3,8 @@
 # Recipe:: default
 
 %w{libreadline-dev libyaml-dev libxslt-dev libssl-dev
-   ncurses-dev libgdbm-dev libffi-dev tk-dev}.each do |pkg|
+   ncurses-dev libgdbm-dev libffi-dev tk-dev ruby-dev
+   gcc make zlib1g-dev}.each do |pkg|
   package pkg do
     action :install
   end
@@ -52,10 +53,10 @@ bash "install ruby" do
   code <<-EOS
     /home/ops/.rbenv/bin/rbenv install 2.3.1
     /home/ops/.rbenv/bin/rbenv rehash
-    /home/ops/.rbenv/bin/rbenv global 
+    /home/ops/.rbenv/bin/rbenv global 2.3.1
   EOS
 end
 
 gem_package "bundler" do
-  gem_binary "/home/ops/.rbenv/shims/gem"
+ gem_binary "/home/ops/.rbenv/versions/2.3.1/bin/gem"
 end
