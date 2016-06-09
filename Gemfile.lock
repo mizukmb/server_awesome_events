@@ -135,6 +135,7 @@ GEM
     plist (3.2.0)
     proxifier (1.0.3)
     rack (1.6.4)
+    rake (11.1.2)
     retryable (2.0.3)
     ridley (4.5.1)
       addressable
@@ -209,6 +210,9 @@ DEPENDENCIES
   berkshelf
   chef
   knife-solo
+  rake
+  rspec
+  serverspec
 
 BUNDLED WITH
    1.12.4
